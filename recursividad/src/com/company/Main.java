@@ -13,14 +13,14 @@ public class Main {
         int[][] matriz = new int[3][5];
 
         for (int i = 0; i < matriz.length; i++) {
-            rellenarFila(matriz, i, 0);
+            rellenarMatriz(matriz, i, 0);
         }
 
         //MOSTRAR SALIDA
         for (int i = 0; i < matriz.length; i++) {
             StringBuilder fila = new StringBuilder();
             fila.append("Fila " + i + "--> ");
-            for (int j = 0; j < matriz.length; j++) {
+            for (int j = 0; j < 5; j++) {
                 fila.append(matriz[i][j]);
                 fila.append("|");
             }
@@ -29,10 +29,10 @@ public class Main {
     }
 
 
-    public static void rellenarFila(int[][] matriz, int i, int j) {
+    public static void rellenarMatriz(int[][] matriz, int i, int j) {
         matriz[i][j] = numeros.charAt(rnd.nextInt(words));
         if (j < matriz[i].length - 1) {
-            rellenarFila(matriz, i, j + 1);
+            rellenarMatriz(matriz, i, j + 1);
         }
     }
 }
