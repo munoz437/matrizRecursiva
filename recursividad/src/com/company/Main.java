@@ -6,8 +6,8 @@ import java.util.Random;
 public class Main {
 
     private static Random rnd = new Random();
-    private static final String abecedary = "0123456789";
-    private static int words = abecedary.length() - 1;
+    private static final String numeros = "0123456789";
+    private static int words = numeros.length() - 1;
 
     public static void main(String args[]) {
         int[][] matriz = new int[3][5];
@@ -16,13 +16,13 @@ public class Main {
             rellenarFila(matriz, i, 0);
         }
 
-        //Salida
+        //MOSTRAR SALIDA
         for (int i = 0; i < matriz.length; i++) {
             StringBuilder fila = new StringBuilder();
-            fila.append("Fila " + i + ": ");
+            fila.append("Fila " + i + "--> ");
             for (int j = 0; j < matriz.length; j++) {
                 fila.append(matriz[i][j]);
-                fila.append(",");
+                fila.append("|");
             }
             System.out.println(fila);
         }
@@ -30,7 +30,7 @@ public class Main {
 
 
     public static void rellenarFila(int[][] matriz, int i, int j) {
-        matriz[i][j] = abecedary.charAt(rnd.nextInt(words));
+        matriz[i][j] = numeros.charAt(rnd.nextInt(words));
         if (j < matriz[i].length - 1) {
             rellenarFila(matriz, i, j + 1);
         }
