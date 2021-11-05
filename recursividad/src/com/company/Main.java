@@ -7,7 +7,7 @@ public class Main {
 
     private static Random rnd = new Random();
     private static final String numeros = "0123456789";
-    private static int words = numeros.length() - 1;
+    private static int digitos = numeros.length() - 1;
 
     public static void main(String args[]) {
         int[][] matriz = new int[3][5];
@@ -30,7 +30,7 @@ public class Main {
 
 
     public static void rellenarMatriz(int[][] matriz, int i, int j) {
-        matriz[i][j] = numeros.charAt(rnd.nextInt(words));
+        matriz[i][j] = numeros.charAt(rnd.nextInt(digitos));
         if (j < matriz[i].length - 1) {
             rellenarMatriz(matriz, i, j + 1);
         }
